@@ -1,8 +1,8 @@
 import Input
 
 
-class TextInput(Input):
+class CbInput(Input):
     def __init__(self, name):
         super.__init__(self, name)
-        self.text = ""
+        self.values = []
 
