@@ -12,3 +12,6 @@ class Form:
 
     def addInput(self,input):
         self.inputs += [input]
+
+
+
