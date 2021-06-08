@@ -1,5 +1,6 @@
 class Form:
-    def __init__(self):
+    def __init__(self,name):
+        self.name= name
         self.inputs = []
         self.currentInputIndex = 0
 
@@ -8,3 +9,6 @@ class Form:
         if input.saisieInput(value):
             #Do end check
             self.currentInputIndex += 1
+
+    def addInput(self,input):
+        self.inputs += [input]

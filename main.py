@@ -1,17 +1,11 @@
-# This is a sample Python script.
+from Form import Form
+from RadioInput import RadioInput
+from TextInput import TextInput
 
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+F = Form("formtest")
+F.addInput(TextInput("Age"))
+F.addInput(TextInput("Nom"))
+F.addInput(TextInput("Prénom"))
+F.addInput(RadioInput("Genre"))
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
