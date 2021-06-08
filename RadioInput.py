@@ -1,9 +1,9 @@
 from Input import Input
 
 
-class RadioInput(Input):
+class RadioInput(Input, object):
     def __init__(self, name):
-        super().__init__(name)
+        super(RadioInput, self).__init__(name)
         self.choices = []
         self.selectedIndex = -1
 
