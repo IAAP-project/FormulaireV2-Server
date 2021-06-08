@@ -1,3 +1,3 @@
 class Input :
     def __init__(self):
-        pass
+        self.name = "Unnamed input"
