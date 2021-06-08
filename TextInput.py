@@ -6,3 +6,8 @@ class TextInput(Input):
         super.__init__(self, name)
         self.text = ""
 
+    def saisieInput(self,value):
+        self.text= value
+        return True
+
+
