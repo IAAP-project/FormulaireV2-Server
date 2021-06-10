@@ -9,16 +9,20 @@ PORT_NUMBER = 8010 # Maybe set this to 9000.
 class FormWebManager:
     def __init__(self, form):
         self.form = form
+        self.server_class = BaseHTTPServer.HTTPServer
+        self.httpd = self.server_class((HOST_NAME, PORT_NUMBER), WebHandler)
 
     def createServer(self):
-        server_class = BaseHTTPServer.HTTPServer
-        httpd = server_class((HOST_NAME, PORT_NUMBER), WebHandler)
         print(time.asctime(), "Server Starts - %s:%s" % (HOST_NAME, PORT_NUMBER))
         try:
-            httpd.serve_forever()
+            self.httpd.serve_forever()
         except KeyboardInterrupt:
             pass
-        httpd.server_close()
+        self.httpd.server_close()
+        print(time.asctime(), "Server Stops - %s:%s" % (HOST_NAME, PORT_NUMBER))
+
+    def stopServer(self):
+        self.httpd.server_close()
         print(time.asctime(), "Server Stops - %s:%s" % (HOST_NAME, PORT_NUMBER))
 
 
