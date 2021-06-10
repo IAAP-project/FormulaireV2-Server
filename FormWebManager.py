@@ -1,5 +1,5 @@
 import time
-from http.server import HTTPServer
+import BaseHTTPServer
 from WebHandler import WebHandler
 
 HOST_NAME = '127.0.0.1' # !!!REMEMBER TO CHANGE THIS!!!
@@ -10,7 +10,7 @@ class FormWebManager:
         self.form = form
 
     def createServer(self):
-        server_class = HTTPServer
+        server_class = BaseHTTPServer.HTTPServer
         httpd = server_class((HOST_NAME, PORT_NUMBER), WebHandler)
         print(time.asctime(), "Server Starts - %s:%s" % (HOST_NAME, PORT_NUMBER))
         try:
