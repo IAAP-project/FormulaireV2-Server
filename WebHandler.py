@@ -1,5 +1,6 @@
+#from http.server import BaseHTTPRequestHandler
+import json
 import BaseHTTPServer
-
 
 class WebHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     def do_HEAD(s):
@@ -18,3 +19,19 @@ class WebHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         # then s.path equals "/foo/bar/".
         s.wfile.write("<p>You accessed path: %s</p>" % s.path)
         s.wfile.write("</body></html>")'''
+    def do_POST(self):
+        data_string = self.rfile.read(int(self.headers['Content-Length']))
+        print("{}".format(data_string))
+
+        data = json.loads(data_string)
+        for key in data:
+            print(data[key])
+        return
+
+    def do_OPTIONS(self):
+        self.send_response(200, "ok")
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, OPTIONS')
+        self.send_header("Access-Control-Allow-Headers", "X-Requested-With")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.end_headers()
