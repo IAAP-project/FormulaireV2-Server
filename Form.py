@@ -1,4 +1,8 @@
 import time
+
+from Input import Input
+
+
 class Form:
     def __init__(self, name, manager):
         self.name = name
@@ -52,6 +56,12 @@ class Form:
 
     def addInput(self,input):
         self.inputs += [input]
+
+    def getInput(self, inputId) -> Input:
+        for input in self.inputs:
+            if input.getId() == inputId:
+                return input
+        raise LookupError("Champ non trouvé!")
 
 
 
