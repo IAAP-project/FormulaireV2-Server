@@ -61,7 +61,7 @@ class Form:
         for input in self.inputs:
             if input.getId() == inputId:
                 return input
-        raise LookupError("Champ non trouvé!")
+        raise LookupError("Input not found!")
 
 
 
