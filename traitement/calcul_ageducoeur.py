@@ -3,7 +3,6 @@ import time
 
 from Form import Form
 
-
 class AgeDuCoeurCalculator:
     def __init__(self, form: Form):
         self.form = form
