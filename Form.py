@@ -57,7 +57,7 @@ class Form:
     def addInput(self,input):
         self.inputs += [input]
 
-    def getInput(self, inputId) -> Input:
+    def getInput(self, inputId):
         for input in self.inputs:
             if input.getId() == inputId:
                 return input
