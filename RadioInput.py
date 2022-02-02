@@ -20,7 +20,7 @@ class RadioInput(Input, object):
 
     def getValue(self):
         if self.selectedIndex != -1:
-            return self.choices[self.selectedIndex].getId()
+            return self.choices[self.selectedIndex].getValue()
         return -1
 
     def addChoice(self, choice):

@@ -1,7 +1,8 @@
 class BoxChoice:
-    def __init__(self, name, id):
+    def __init__(self, name, id, value):
         self.name = name
         self.id = id
+        self.value = value
         self.selected = False
 
     def getName(self):
@@ -15,3 +16,6 @@ class BoxChoice:
 
     def getId(self):
         return self.id
+
+    def getValue(self):
+        return self.value
